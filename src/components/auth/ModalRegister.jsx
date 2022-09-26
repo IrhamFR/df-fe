@@ -21,7 +21,7 @@ function ModalRegister({ handleClose, show }) {
     password: "",
     fullname: "",
     gender: "",
-    phone: 0,
+    phone: "",
     address: "",
   });
 
@@ -52,7 +52,7 @@ function ModalRegister({ handleClose, show }) {
           password: form.password,
           fullname: form.fullname,
           gender: form.gender,
-          phone: parseInt(form.phone),
+          phone: form.phone,
           address: form.address,
         }
       
