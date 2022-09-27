@@ -87,7 +87,7 @@ const AddFilm = () => {
 		  formData.set("title", form?.title);
 		  formData.set("description", form?.description);
 		  formData.set("year", form?.year);
-		  formData.set("category_id", form?.category_id);
+		  formData.set("category_id", parseInt(form?.category_id) );
 		  formData.set("linkfilm", form?.linkfilm);
 		  formData.set(
 			"thumbnail",
