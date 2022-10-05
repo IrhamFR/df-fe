@@ -1,6 +1,7 @@
 import React from "react";
 import SeriesContainer from "../components/SeriesContainer";
 import bgHero from '../Images/la-casa-de-papel-logo.png'
+import { Link } from "react-router-dom";
 
 const TvShows = () => {
   const title = "Series List";
@@ -22,9 +23,11 @@ const TvShows = () => {
               </button>
             </div>
             <div>
-              <button className="btn btn-watch text-light py-2 px-5 fs-4 shadow">
-                WATCH NOW!
-              </button>
+              <Link to={`/video/8`} className="text-decoration-none">
+                <button className="btn btn-watch text-light py-2 px-5 fs-4 shadow">
+                  WATCH NOW!
+                </button>
+              </Link>
             </div>
           </div>
         </div>
