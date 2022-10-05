@@ -9,11 +9,9 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import {Container, Row, Col, Card, Button, Badge} from 'react-bootstrap'
-// import { useNavigate } from 'react-router-dom';
 import profileUser from '../Images/profileUser.png'
 import { UserContext } from '../context/userContext'
 import { API, setAuthToken } from '../config/api'
-// import { useQuery } from 'react-query'
 
 const initialUser = {
   fullname: "",
@@ -31,21 +29,10 @@ function Profile() {
   
   const [state] = useContext(UserContext)
   console.log("state", state)
-  // const [userData, setUserData] = useState()
   
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
-
-  // const navigate = useNavigate()
-  
-  
-  // let { data: user } = useQuery('profileCache', async () => {
-  //   const response = await API.get(`/profile`);
-  //   setUserData(response.data.data)
-  //   console.log(response)
-  //   return response.data.data;
-  // });
   
   return (
     <Container>
@@ -101,7 +88,7 @@ function Profile() {
                   </div>
                 </div>
                 {/* Address */}
-                <div className="d-flex mb-3 align-items-start">
+                <div className="d-flex align-items-start">
                   <FaMapMarked className="text-danger me-3 fs-1" />
                   <div>
                     <h5>{state.user.address}</h5>
