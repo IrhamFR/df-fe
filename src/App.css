@@ -167,6 +167,16 @@ input[type="file"] {
   cursor: pointer;
 }
 
+/* dropdown nav */
+#dropdown-basic::after{
+  display: none; 
+}
+
+#dropdown-face::after {
+  display: none;
+}
+
+/* Scroll bar */
 ::-webkit-scrollbar {
   width: 5px;
   }
