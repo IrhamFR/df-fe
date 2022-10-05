@@ -42,6 +42,10 @@ td {
   font-weight: bold;
 }
 
+.transcation-table td {
+  color: #ddd;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
