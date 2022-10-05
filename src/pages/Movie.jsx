@@ -17,7 +17,7 @@ const Movie = () => {
             A young man grows up in the mob and works very hard to advance himself through the ranks. He enjoys his life of money and luxury, but is oblivious to the horror that he causes. A drug addiction and a few mistakes ultimately unravel his climb to the top.
             </p>
             <div className="mb-4">
-              <span>2019</span>
+              <span>1990</span>
               <button className="btn btn-outline-light ms-2 py-1 tv-s shadow">
                 Movie
               </button>
