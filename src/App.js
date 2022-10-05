@@ -23,6 +23,7 @@ import {
   Admin,
   PrivateRoute,
 } from "./pages";
+import PrivateRouteLogin from './components/PrivateRouteLogin'
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -32,8 +33,6 @@ function App() {
   const navigate = useNavigate()
   
   const [state, dispatch] = useContext(UserContext);
-
-  const [isLogged, setIsLogged] = useState(false);
 
   const checkUser = async () => {
     try {
@@ -97,37 +96,37 @@ function App() {
         }
       />
 
-      <Route
-        path="/video/:id"
-        element={
-          <Layout>
-            <VideoDetail />
-          </Layout>
-        }
-      />
+      <Route element={<PrivateRouteLogin isLogged={state.isLogin} />}>
+        <Route
+          path="/video/:id"
+          element={
+            <Layout>
+              <VideoDetail />
+            </Layout>
+          }
+        />
 
-      <Route
-        path="/profile"
-        element={
-          <Layout>
-            <Profile />
-          </Layout>
-        }
-      />
+        <Route
+          path="/profile"
+          element={
+            <Layout>
+              <Profile />
+            </Layout>
+          }
+        />
 
-      <Route
-        path="/payment"
-        element={
-          <Layout>
-            <Payment />
-          </Layout>
-        }
-      />
+        <Route
+          path="/payment"
+          element={
+            <Layout>
+              <Payment />
+            </Layout>
+          }
+        />
+      </Route>
 
 
-      <Route 
-      // element={<PrivateRoute isLogged={isLogged} />}
-      >
+      <Route element={<PrivateRoute isLogged={state.isAdmin} />}>
         <Route
           path="/admin"
           element={
@@ -136,11 +135,7 @@ function App() {
             </LayoutAdmin>
           }
         />
-      </Route>
 
-      <Route 
-      // element={<PrivateRoute isLogged={isLogged} />}
-      >
         <Route
           path="/list-film"
           element={
@@ -149,11 +144,7 @@ function App() {
             </LayoutAdmin>
           }
         />
-      </Route>
 
-      <Route 
-      // element={<PrivateRoute isLogged={isLogged} />}
-      >
         <Route
           path="/add-film"
           element={
@@ -162,11 +153,7 @@ function App() {
             </LayoutAdmin>
           }
         />
-      </Route>
 
-      <Route 
-      // element={<PrivateRoute isLogged={isLogged} />}
-      >
         <Route
           path="/add-episode"
           element={
@@ -175,11 +162,7 @@ function App() {
             </LayoutAdmin>
           }
         />
-      </Route>
 
-      <Route 
-      // element={<PrivateRoute isLogged={isLogged} />}
-      >
         <Route
           path="/video-admin/:id"
           element={

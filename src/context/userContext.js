@@ -8,7 +8,7 @@ const initialState = {
   user: {},
 };
 
-const reducer = (state, action) => {
+function reducer (state, action) {
   const { type, payload } = action;
 
   switch (type) {
