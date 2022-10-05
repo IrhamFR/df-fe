@@ -72,7 +72,7 @@ const TablePage = () => {
                           <td>{data.user.fullname}</td>
                           <td>{data.user.email}</td>
                           <td>{Duration(data.dueDate, data.startDate)}</td>
-                          <td className={data.status === "Success" ? "text-success" : data.status === "Pending" ? "text-warning" : "text-danger"}>{data.status === "Success" ? "Success" : data.status === "Pending" ? "Pending" : "Failed"}</td>
+                          <td className={data.status === "success" ? "text-success" : data.status === "pending" ? "text-warning" : "text-danger"}>{data.status === "success" ? "Success" : data.status === "pending" ? "pending" : "Failed"}</td>
                         </tr>
                       </>
                     );
