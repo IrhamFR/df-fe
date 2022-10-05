@@ -1,6 +1,7 @@
 import React from 'react'
 import MovieContainer from '../components/MovieContainer'
 import SeriesContainer from '../components/SeriesContainer'
+import { Link } from 'react-router-dom';
 
 function Home() {
   const title = "Home";
@@ -20,7 +21,9 @@ function Home() {
               <button className='btn btn-outline-light ms-2 py-1 tv-s shadow'>TV Series</button>
             </div>
             <div>
+            <Link to={`/video/6`} className="text-decoration-none">
             <button className='btn btn-watch text-light py-2 px-5 fs-4 shadow'>WATCH NOW!</button>
+            </Link>
             </div>
         </div>
       </div>

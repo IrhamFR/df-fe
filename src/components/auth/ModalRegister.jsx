@@ -148,14 +148,7 @@ function ModalRegister({ handleClose, show }) {
       console.log(error);
     }
 
-    // e.preventDefault()
-    // handleClose()
-    // if(isRegister) {
-    //   localStorage.setItem("token", JSON.stringify(userData))
-    // }
   });
-
-  // const [userData, setUserData] = useState(form)
 
   const switchRegister = () => {
     // setForm(form)
@@ -164,7 +157,10 @@ function ModalRegister({ handleClose, show }) {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} >
+      <Modal show={show} onHide={handleClose} 
+      size="fluid"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
         <Modal.Header className="bg-dark text-white border-0">
           <Modal.Title>{isRegister ? "Register" : "Login"}</Modal.Title>
         </Modal.Header>
@@ -243,13 +239,13 @@ function ModalRegister({ handleClose, show }) {
                 </Form.Group>
               </>) : ("")}
 
-            <Button className="bg-white text-danger fw-bold border-0 btn-full" >
+            <Button className="bg-white text-danger fw-bold border-0 btn-full mt-3" >
             <input type={"submit"} className="bg-white text-danger fw-bold border-0 btn-full" size="lg" value={isRegister ? "Register" : "Login"} />
             </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer className='bg-dark border-0 mod-fot'>
-          <p className='text-white text-muted'>Already Have an Account? Klik<span onClick={switchRegister} className='here'> Here</span></p>
+          <p className='text-white text-muted'>{isRegister ? "Already Have an Account? Klik" : "Don't Have an Account? Klik"} <span onClick={switchRegister} className='here'> Here</span></p>
         </Modal.Footer>
       </Modal>
     </>
